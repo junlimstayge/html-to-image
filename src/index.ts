@@ -16,11 +16,13 @@ export async function toSvg<T extends HTMLElement>(
   node: T,
   options: Options = {},
 ): Promise<string> {
+  console.log('hti', 'toSvg')
   const { width, height } = getImageSize(node, options)
   const clonedNode = (await cloneNode(node, options, true)) as HTMLElement
   await embedWebFonts(clonedNode, options)
   await embedImages(clonedNode, options)
   applyStyle(clonedNode, options)
+  console.log('hti', 'toSvg', 'embedBackground', clonedNode)
   const datauri = await nodeToDataURL(clonedNode, width, height)
   return datauri
 }

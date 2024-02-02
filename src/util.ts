@@ -220,6 +220,7 @@ export async function nodeToDataURL(
 
   svg.appendChild(foreignObject)
   foreignObject.appendChild(node)
+  console.log('hti', 'svgToDataURL')
   return svgToDataURL(svg)
 }
 

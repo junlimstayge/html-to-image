@@ -88,7 +88,9 @@ export async function embedImages<T extends HTMLElement>(
   clonedNode: T,
   options: Options,
 ) {
+  console.log('hti', 'embedImages')
   if (isInstanceOfElement(clonedNode, Element)) {
+    console.log('hti', 'embedImages, isInstanceOfElement')
     await embedBackground(clonedNode, options)
     await embedImageNode(clonedNode, options)
     await embedChildren(clonedNode, options)
